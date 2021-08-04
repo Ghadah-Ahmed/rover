@@ -1,0 +1,809 @@
+/*
+ * Lay this page out - make it responsive, use grid, flex, position and media queries where needed.
+ *
+ * Colors-
+ * Green: #14a96d
+ * White: #fff
+ * Light gray: #f4f5f6
+ * Border gray: #cfd7de
+ * Dark text: #1b1f23
+ * Lighter text: #66727c
+ * Blue for links: #06748a
+ * Blue for hovered links: #033641
+ */
+/* Globals */
+body {
+  font-family: 'Cabin', sans-serif;
+  overflow: scroll;
+}
+
+a {
+  text-decoration: none;
+  color: #06748a;
+}
+
+a:hover{
+  color: #033641;
+}
+
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.60);
+  display: none;
+}
+
+.mask-content {
+  background-color: white;
+  padding: 0 15px 35px 40px;
+  border: 2px solid #14a96d;
+  width: 400px;
+  position: fixed;
+  top: calc(50% - 100px);
+  left: calc(50% - 240px);
+  text-align: center;
+}
+
+.model-sign-up:focus {
+  outline: none;
+}
+
+.model-sign-up {
+  background: linear-gradient(180deg, #178c5f, #207e4f);
+  text-align: center;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+}
+
+.exis {
+  cursor: pointer;
+  border: 0.5px solid;
+  padding: 3px;
+  font: icon;
+}
+
+.mask-content h1 {
+  margin: 0;
+  text-align: right;
+}
+
+/* <!--Rover Header--> */
+.rover-header-container {
+  display: flex;
+  justify-content: space-between;
+  /* position: sticky;
+  background-color: white;
+  top:0;
+  left: 0;
+  right: 0; */
+}
+
+.logo {
+  height: 50px;
+  margin-right: 30px;
+}
+
+.rover-header-left a, .rover-header-right a {
+  padding-right: 30px;
+  color: #66727c;
+}
+
+.rover-header-left a:nth-child(2)::before {
+  content: "paw";
+  color: transparent;
+  background: url('https://api.iconify.design/bi:suit-heart.svg?color=%2366727c') no-repeat center center / contain;
+}
+
+.rover-header-left a:nth-child(3)::before {
+  content: "paw";
+  color: transparent;
+  background: url('https://api.iconify.design/la:paw.svg?color=%2366727c') no-repeat center center / contain;
+}
+
+.rover-header-left a:nth-child(1)::before {
+  content: "paw";
+  color: transparent;
+  background: url('https://api.iconify.design/bx:bx-search.svg?color=%2366727c') no-repeat center center / contain;
+}
+
+.rover-header-right a:nth-child(3)::before {
+  content: "paw";
+  color: transparent;
+  background: url('https://api.iconify.design/ant-design:question-circle-outlined.svg?color=%2366727c') no-repeat center center / contain;
+}
+
+.rover-header-container div {
+  display: flex;
+}
+
+.rover-header-left, .rover-header-right {
+  height: 20px;
+  padding-top: 15px;
+}
+
+.none {
+  display: none;
+}
+
+.svg-replaced {
+  border: 1px solid #cfd7de;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px 15px;
+}
+
+.mobile-nav-items-right a, .mobile-nav-items-left a {
+  display: block;
+  margin-top: 10px;
+}
+
+.mobile-nav-items-right {
+  padding-top: 100px;
+}
+
+.mobile-nav {
+  height: 0px;
+  overflow-y: hidden;
+  padding: 0 15px;
+  transition: 0.7s;
+
+}
+
+
+
+.iconify {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.iconify:hover {
+  background-color: #cfd7de;
+}
+
+/* <!--Rover Hero Container--> */
+.rover-hero-container-mobile {
+  margin: 80px 15px 100px 15px;
+}
+
+.rover-hero-container p {
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.rover-hero-container {
+  display: none;
+  background-image: url("https://i.ibb.co/f1mfKLc/hero.jpg");
+  width: 100vw;
+  height: 700px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 15%;
+}
+
+/* .shadow {
+  position: relative;
+}
+.shadow::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(90deg,rgba(0,0,0,0.20),transparent);
+  content: "";
+} */
+.Search {
+  width: 100%;
+  padding: 100px;
+  margin: 0;
+}
+
+
+.rover-hero-container-div {
+  width: 30%;
+  padding: 20px 20px 20px 90px;
+  text-align: center;
+}
+
+.rover-hero-container-div p {
+  font-size: 30px;
+  line-height: 40px;
+  color: #494E52;
+}
+
+.rover-hero-container-div h1 {
+  font-size: 45px;
+  color: #494E52;
+}
+
+/* <!--Rover Facts Container--> */
+.rover-facts-container {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+
+
+.rover-middle-section h2 {
+  text-align: center;
+}
+
+
+
+.rover-mobile-hero-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+
+
+.rover-mobile-hero {
+  width: 44%;
+}
+
+.rover-fact-indiv {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.rover-fact-indiv h3, .rover-fact-indiv p {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.rover-fact-indiv p {
+  color: #66727c;
+}
+
+.rover-fact-indiv img {
+  margin-right: 20px;
+  height: 38px;
+  width: 42px;
+}
+
+
+
+.rover-cta-header {
+  background-color: #f4f5f6;
+  display: flex;
+  justify-content: center;
+  border: 1px solid #cfd7de;
+  border-bottom: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 20px;
+}
+
+.rover-facts {
+  border: 1px solid #cfd7de;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 20px;
+}
+
+ul {
+  list-style: none;
+  line-height: 35px;
+  padding-left: 5px;
+}
+
+li::before {
+  margin-right: 10px;
+  content: "✔︎";
+  color: #14a96d;
+}
+
+.rover-cta {
+  background: linear-gradient(180deg, #178c5f, #207e4f);
+  text-align: center;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+}
+
+.rover-cta-box {
+  padding: 15px;
+}
+
+
+
+.rover-protections {
+  padding: 10px;
+  line-height: 25px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.rover-cta-img {
+  background-image: url("https://www.rover.com//static/dist/3231858395a8c83cbb7d6ef65bd6e068.png");
+  margin-right: 10px;
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+}
+
+.rover-cta-header p {
+  margin: 0;
+  padding-top: 7px;
+}
+
+/* <!--Rover action--> */
+.rover-action-quote-container-mobile {
+  padding: 20px;
+  border: 1px solid #cfd7de;
+  border-radius: 5px;
+  background-color: white;
+}
+
+
+
+.rover-action-quote-container {
+  position: absolute;
+  width: 23vw;
+  right: 60%;
+  bottom: 43%;
+  padding: 20px;
+  border: 1px solid #cfd7de;
+  border-radius: 5px;
+  background-color: white;
+  display: none;
+}
+
+
+
+.rover-action-quote-container-mobile p {
+  color: #66727c;
+}
+
+hr {
+  background-color: #14a96d;
+  width: 40px;
+  height: 1px;
+  border: 0;
+  text-align: left;
+  margin: 0 0 20px 0;
+}
+
+.rover-quote {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+
+
+.rover-quote .span-img {
+  font-size: 13px;
+}
+
+
+.rover-action-img {
+  background-image: url("https://www.rover.com/static/dist/a16f802b037458af3bbab4db5bd3f93e.jpg");
+  height: 400px;
+  background-size: 250%;
+  background-repeat: no-repeat;
+  background-position-x: 65%;
+  background-position-y: 80%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+}
+
+.rover-action-img .span-img {
+  background-color: rgba(0, 0, 0, .5);
+  color: white;
+  margin: 30px;
+  padding: 6px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+
+
+/* <!--Rover 1-2-3--> */
+.rover-123-container h2 {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.rover-123-item-img {
+  margin-right: 20px;
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  height: 36px;
+  width: 36px;
+}
+
+.rover-123-item-img2 {
+  background-image: url("https://i.ibb.co/B4Z1bzT/phone.png");
+}
+
+.rover-123-item-img3 {
+  background-image: url("https://i.ibb.co/4ZrkTkt/shield.png");
+}
+
+.rover-123-item-img1 {
+  background-image: url("https://i.ibb.co/gV5G6x8/watchglass.png");
+}
+
+.rover-123-item {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.rover-123-item h3, .rover-123-item p {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.rover-123-item p {
+  color: #66727c;
+}
+
+.rover-123-item-container {
+  margin: 0 15px;
+}
+
+
+/* Littlt Doggy game */
+.game {
+  margin-bottom: 100px;
+  display: none;
+}
+
+.game h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.game hr {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 100vw;
+}
+
+
+.play-ground {
+  height: 300px;
+  width: 600px;
+  background-image: url("https://i.ibb.co/8z04CKp/image.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: auto;
+  padding: 50px 90px;
+  position: relative;
+}
+
+.character {
+  height: 107px;
+  width: 105px;
+  position: relative;
+  top: 193px;
+  /* background-color: blue; */
+}
+
+.animation {
+  animation: character-jump 500ms;
+}
+
+.doggy {
+  height: 120px;
+  width: 150px;
+}
+
+@keyframes character-jump {
+  0% {
+    top: 193px;
+  }
+
+  30% {
+    top: 125px;
+  }
+
+  90% {
+    top: 125px;
+  }
+
+  100% {
+    top: 193px;
+  }
+}
+
+.object {
+  height: 70px;
+  width: 100px;
+  position: relative;
+  left: 480px;
+  top: 125px;
+  z-index: 1;
+  /* background-color: green; */
+}
+
+.ob-animation {
+  animation: object-moves linear 1s infinite;
+}
+
+.rock {
+  height: 70px;
+  width: 110px;
+}
+
+@keyframes object-moves {
+  0% {
+    left: 480px;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+.rover {
+  height: 90px;
+  width: 70px;
+  position: relative;
+  top: -12px;
+  left: 500px;
+  /* background-color: blue; */
+}
+/* replay model */
+.mask-lost {
+  height: 400px;
+  width: 780px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  display: none;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.80);
+}
+
+.model-lost {
+  /* background-color: #F0E6D1; */
+  background-image: url("https://i.ibb.co/jvfGH4K/imgbin-cuisine-of-hawaii-luau-png.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 30px;
+  padding: 85px 20px 10px 15px;
+  /* border: 0.1px solid grey; */
+  /* border-radius: 10px; */
+  width: 360px;
+  height: 160px;
+  position: absolute;
+  top: 60px;
+  /* top: 115px; */
+  left: 190px;
+  text-align: center;
+  z-index: 100;
+}
+
+.model-replay:focus {
+  outline: none;
+}
+
+.model-replay {
+  background: linear-gradient(180deg, #178c5f, #207e4f);
+  text-align: center;
+  padding: 5px 20px;
+  color: white;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.exis-lost {
+  cursor: pointer;
+  border: 0.5px solid;
+  padding: 3px;
+  font: icon;
+}
+
+.model-lost h1 {
+  display: inline;
+position: relative;
+/* bottom: 30px;
+left: 270px; */
+left: 210px;
+top: 5px;
+  margin: 0;
+  text-align: right;
+}
+
+.model-lost h3{
+  display: inline;
+  margin: 0;
+}
+
+.model-lost p{
+  margin: 3px 0;
+}
+
+/* welcoming model */
+.welcoming {
+  height: 400px;
+  width: 780px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  z-index: 50;
+  background-image: url("https://i.ibb.co/K70SnD2/paper-background-Text-background-free-border-Frames.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: white;
+}
+
+.welcoming-model {
+  padding: 15px 15px 35px 15px;
+  width: 350px;
+  position: absolute;
+  color: #F0E6D1;
+  top: 50px;
+  left: 220px;
+  text-align: center;
+  z-index: 100;
+}
+
+.welcoming-model-start:focus {
+  outline: none;
+}
+
+.welcoming-model-start {
+  background: linear-gradient(180deg, #178c5f, #207e4f);
+  text-align: center;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+}
+
+.welcoming-model p {
+  text-align: left;
+}
+
+/* 123 start */
+.model-123 {
+  padding-left: 40px;
+  width: 200px;
+  position: absolute;
+  top: 120px;
+  left: 280px;
+  text-align: center;
+  z-index: 100;
+  display: none;
+  /* background-color: green; */
+}
+
+.numbers {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  font-size: 150px;
+  display: none;
+}
+
+
+.stopwatch {
+  /* background-color: #F0E6D1; */
+  background-image: url("https://i.ibb.co/VpTnFYr/Wooden-Board-PNG-Free.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 120px;
+  width: 190px;
+  padding-top: 40px;
+/* padding: 10px; */
+text-align: center;
+border-radius: 10px;
+position: absolute;
+right: 290px;
+top: -9px;
+}
+
+
+/* @media  */
+
+
+
+@media (min-width: 770px) {
+  .rover-hero-container {
+    display: flex;
+    align-items: center;
+  }
+  .none {
+    display: flex;
+  }
+  .mobile-nav {
+    display: none;
+  }
+
+  .svg-replaced {
+    display: none;
+  }
+
+  .rover-header-container {
+    justify-content: space-around;
+  }
+
+  .rover-hero-container-mobile {
+    display: none;
+  }
+  .rover-content-container {
+    padding: 10px;
+    margin: auto;
+    width: 80vw;
+  }
+  .rover-123-item-img {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    margin-bottom: 15px;
+  }
+  .rover-123-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+    padding: 10px;
+    width: 33%;
+  }
+  .rover-123-item-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+  }
+  .rover-action-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 512px;
+    justify-content: flex-end;
+    margin-top: 80px;
+  }
+  .rover-quote .span-h3 {
+    font-size: 2vw;
+    color: #66727c;
+  }
+  .rover-quote {
+    font-size: 2vw;
+    line-height: 3vw;
+    margin-bottom: 40px;
+  }
+  .rover-action-quote-container {
+    display: block;
+  }
+  .rover-action-quote-container-mobile {
+    display: none;
+  }
+  .rover-cta-box {
+    width: 50%;
+  }
+  .rover-services-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+  }
+  .rover-mobile-hero-container {
+    display: none;
+  }
+  .rover-fact-indiv img {
+    height: 45px;
+    width: 45px;
+  }
+  .rover-facts-container {
+    margin: 0;
+  }
+  .game {
+    display: block;
+  }
+}
