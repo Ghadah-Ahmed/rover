@@ -1,7 +1,7 @@
 # Rover
 
 ## Description
-Imitating the front-end design of Rover with some creative additions like the Rover Game found in the desktop view.
+We mirrored the front-end design of Rover, adding a few creative touches to it like the Rover Game in the desktop version.
 
 ## Desktop and Mobile View
 
